@@ -1,8 +1,7 @@
 footer {
     position: relative;
     padding: 30px 0 50px 0;
-    border-top: 1px solid rgba($color: $clr-main, $alpha: .25);
-    background-color: #fff;
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -33,7 +32,7 @@ footer {
 
                 &-title {
                     @extend %text_body3;
-                    color: $clr-greytext;
+                    color: $clr-grey;
                 }
 
                 &-link {

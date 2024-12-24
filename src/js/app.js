@@ -256,14 +256,14 @@ document.querySelectorAll(".product-counter").forEach(product_counter => {
 
 // });
 
-// window.addEventListener('scroll', function () {
-//   let y = document.documentElement.scrollTop;
-//   if (y > 10) {
-//     document.querySelector('header').classList.add('active');
-//   } else {
-//     document.querySelector('header').classList.remove('active');
-//   }
-// })
+window.addEventListener('scroll', function () {
+  let y = document.documentElement.scrollTop;
+  if (y > 10) {
+    document.querySelector('header').classList.add('active');
+  } else {
+    document.querySelector('header').classList.remove('active');
+  }
+})
 
 
 
