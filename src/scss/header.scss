@@ -12,10 +12,10 @@ header {
     font-family: $f-m;
     padding: 25px 20px;
     &.hide {
-        top: -69px;
+        top: -115px;
     }
 
-    .active {
+    &.active {
         border-bottom: 1px solid $clr-border
     }
 
@@ -34,7 +34,11 @@ header {
             display: flex;
             align-items: center;
             gap: 32px;
-
+            a {
+                &:hover {
+                    color: $clr-black;
+                }
+            }
             &::before {
                 content: '';
                 width: 1px;

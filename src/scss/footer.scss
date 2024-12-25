@@ -1,46 +1,56 @@
 footer {
     position: relative;
-    padding: 30px 0 50px 0;
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: flex-start;
 
-    .container {
+    .left-cont {
+        .logo-desc {
+            margin-top: 10px;
+            font-family: $f-m;
+            font-size: 16px;
+            color: rgba($color: $clr-black, $alpha: .6);
+        }
+    }
+    .middle-cont {
         display: flex;
-        justify-content: space-between;
-        gap: 50px;
+        gap: 40px;
         align-items: flex-start;
 
-        .left-cont {
+        &-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
 
-            .logo-desc {
-                margin-top: 10px;
-                font-family: $f-m;
-                font-size: 16px;
-                width: 13em;
-                color: rgba($color: $clr-main, $alpha: .5);
+            &-title {
+                @extend %text_h1;
+                font-size: 24px;
+                color: $clr-grey;
+                margin-bottom: 8px
+            }
+
+            &-link {
+                color: $clr-black;
             }
         }
-
-        .right-cont {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-
-            &-col {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-
-                &-title {
-                    @extend %text_body3;
-                    color: $clr-grey;
-                }
-
-                &-link {
-
-                    @extend %text_body1;
-                    color: $clr-main;
-                }
-            }
+    }
+    .right-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+        * {
+            color: rgba($color: $clr-black, $alpha: .6);
+        }
+        a:hover {
+            color: $clr-black;
+        }
+        a:last-child {
+            text-decoration: underline !important;
+            text-underline-offset: 3px;
         }
     }
 }
