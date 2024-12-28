@@ -209,7 +209,20 @@ if (priceModal) {
     priceModal.querySelector('.desc').textContent = desc
   })
 }
+var addonModal = document.getElementById('addonModal')
 
+if (addonModal) {
+  addonModal.addEventListener('show.bs.modal', event => {
+    var button = event.relatedTarget    
+    var title = button.getAttribute('data-title')
+    var desc = button.getAttribute('data-desc')
+    var img = button.getAttribute('data-img')
+    
+    addonModal.querySelector('img').setAttribute('src', img)
+    addonModal.querySelector('.title').textContent = title
+    addonModal.querySelector('.desc').textContent = desc
+  })
+}
 var defaultModal = document.getElementById('defaultModal')
 
 if (defaultModal) {

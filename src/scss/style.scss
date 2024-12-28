@@ -664,6 +664,7 @@ main:has(#success-page) {
 					height: auto;
 					aspect-ratio: 1;
 					border-radius: 10px;
+					pointer-events: none
 				}
 
 				.title {
@@ -793,6 +794,7 @@ main:has(#success-page) {
 				height: auto;
 				aspect-ratio: 1;
 				border-radius: 10px;
+				pointer-events: none
 			}
 
 			.title {
@@ -841,7 +843,12 @@ main:has(#success-page) {
 			}
 
 
-			&:hover {}
+			&:hover {
+				.img-cont {
+
+					box-shadow: 0px 0px 15px 0px rgba(24, 24, 24, 0.3);
+				}
+			}
 		}
 	}
 }
