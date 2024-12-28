@@ -153,6 +153,15 @@ const swiper_addon = new Swiper('.swiper-addon', {
 const swiper_price = new Swiper('.swiper-price', {
   spaceBetween: 20,
   loop: true,
+  enabled: false,
+  allowSlideNext: false,
+  allowSlidePrev: false,
+  focusableElements: false,
+  slideToClickedSlide: false,
+  preventClicks: true,
+  preventClicksPropagation: true,
+  noSwiping: true,
+  noSwipingSelector: 'button',
   breakpoints: {
     1000: {
       slidesPerView: 6,
@@ -168,3 +177,61 @@ const swiper_price = new Swiper('.swiper-price', {
     },
   }
 });
+// $('#priceModal').on('show.bs.modal', function (event) {
+//   var button = $(event.relatedTarget) // Button that triggered the modal
+//   var title = button.data('title') // Extract info from data-* attributes
+//   var desc = button.data('desc') // Extract info from data-* attributes
+//   var img = button.data('img') // Extract info from data-* attributes// Extract info from data-* attributes
+//   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+//   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+//   console.log(title);
+  
+//   var modal = $(this)
+//   modal.find('img').attr('src', img);
+//   modal.find('.title span').text(title);
+//   modal.find('.desc').text(desc);
+//   modal.find('.main-btn').attr('data-price', title);
+//   console.log(title + 'after');
+// })
+
+var priceModal = document.getElementById('priceModal')
+
+if (priceModal) {
+  priceModal.addEventListener('show.bs.modal', event => {
+    var button = event.relatedTarget    
+    var title = button.getAttribute('data-title')
+    var desc = button.getAttribute('data-desc')
+    var img = button.getAttribute('data-img')
+    
+    priceModal.querySelector('img').setAttribute('src', img)
+    priceModal.querySelector('.main-btn').setAttribute('data-price', title)
+    priceModal.querySelector('.title span').textContent = title
+    priceModal.querySelector('.desc').textContent = desc
+  })
+}
+
+var defaultModal = document.getElementById('defaultModal')
+
+if (defaultModal) {
+  defaultModal.addEventListener('show.bs.modal', event => {
+    var button = event.relatedTarget    
+    console.log(button);
+    
+    var price = button.getAttribute('data-price')
+    console.log(price);
+    
+    defaultModal.querySelector('h2 span').textContent = price
+    defaultModal.querySelector('.main-btn').setAttribute('data-endprice', price)
+  })
+}
+// $('#defaultModal').on('show.bs.modal', function (event) {
+//   var button = $(event.relatedTarget) // Button that triggered the modal
+//   var price = button.data('price') // Extract info from data-* attributes
+//   console.log(price);
+// // Extract info from data-* attributes// Extract info from data-* attributes
+//   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+//   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+//   var modal = $(this)
+//   modal.find('h2 span').text(price);
+//   console.log(price + 'after');
+// })

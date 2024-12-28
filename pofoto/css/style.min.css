@@ -188,7 +188,7 @@ img {
   --minheight: 500px;
 }
 
-#sec_8 .swiper-review .swiper-slide .title, #sec_6 .sec-2-cont .sec-6-block .title, #sec_5 .swiper-addon .swiper-slide .title, #sec_4 .swiper-price .swiper-slide:nth-child(6) > div div, #sec_4 .swiper-price .swiper-slide .title, #sec_3 .sec-3-cont .sec-3-block .title, #sec_2 .sec-2-cont .sec-2-block .title, footer .middle-cont-col-title, h1 {
+#sec_8 .swiper-review .swiper-slide .title, #sec_6 .sec-2-cont .sec-6-block .title, #sec_5 .swiper-addon .swiper-slide .title, #sec_4 .swiper-price .swiper-slide:nth-child(6) > div div, #sec_4 .swiper-price .swiper-slide .img-cont .title, #sec_3 .sec-3-cont .sec-3-block .title, #sec_2 .sec-2-cont .sec-2-block .title, footer .middle-cont-col-title, #allPriceModal .price-card .title, .price-modal .click-cont .title, h1 {
   font-family: Bebas Neue;
   font-size: 80px;
   line-height: 1em;
@@ -255,6 +255,7 @@ body {
 }
 
 .main-btn {
+  text-align: center;
   cursor: pointer;
   color: #fff !important;
   background-color: #9720FF;
@@ -406,25 +407,63 @@ h2 span {
 
 main:has(#success-page) {
   display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 #success-page {
-  margin-top: 70px;
-  width: 100%;
-}
-#success-page .container {
-  height: 100%;
+  margin: 0;
+  padding-top: 114px;
+  width: calc((100% - 40px) / 3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-#success-page .container h2 {
+#success-page h1 {
   text-align: center;
+  position: relative;
 }
-#success-page .container .sp-desc {
-  margin-bottom: 20px;
+#success-page h1::before {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%);
+  content: url('data:image/svg+xml,<svg width="162" height="124" viewBox="0 0 162 124" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.1443 37.6996C12.1626 44.413 10.1447 50.999 8.07858 57.4032C7.06235 60.5532 6.26436 62.9927 5.20535 65.8083C4.82798 66.8116 3.76231 67.3862 4.04808 68.7018C5.2348 74.1652 18.28 55.8189 18.5339 55.4742C27.6718 43.073 36.4742 27.0787 44.2134 6.14635C46.6323 -0.395954 40.4181 22.8492 38.3872 30.8103C33.3882 50.4055 28.244 69.2213 22.6043 86.6141C22.3702 87.3362 21.7352 89.3936 22.0457 89.2321C22.9871 88.7423 26.594 83.6419 26.6349 83.5828C35.8598 70.2495 44.8449 54.624 53.5913 37.9063C56.116 33.0808 55.4189 35.4755 53.8906 42.3844C49.2453 63.3845 44.514 84.1584 39.8637 105.147C38.8423 109.756 36.8183 113.627 36.9705 119.408C36.9947 120.327 37.515 119.975 37.7686 119.683C39.1174 118.131 40.3979 115.942 41.6994 113.965C55.8352 92.4961 69.6993 67.4236 84.299 49.8249C87.4339 46.046 87.9143 47.6327 85.8154 57.1277C84.2969 63.9969 81.9413 73.1685 80.2685 79.3114C78.8594 84.4859 75.3476 92.8313 74.3624 99.635C73.953 102.462 76.166 98.2803 76.9962 96.9482C80.5847 91.1903 84.8313 83.3061 88.2297 77.2446C94.0496 66.8641 97.0181 61.4362 102.835 51.9606C104.729 48.8763 109.348 39.5792 111.914 38.8019C112.386 38.659 111.377 41.5259 111.036 42.66C109.483 47.8196 107.888 52.8262 106.327 57.9544C102.099 71.8407 97.8284 85.6785 93.7567 100.117C93.3705 101.487 92.2644 105.3 92.7989 104.802C95.0738 102.684 97.0165 97.5277 99.0642 93.5035C106.871 78.1606 114.672 62.5363 122.329 46.3114C122.487 45.9773 123.216 43.7917 122.828 45.898C122.282 48.8597 120.695 55.9617 120.354 57.4721C119.532 61.1115 109.164 101.147 109.52 102.597C110.261 105.625 122.878 75.3389 123.327 74.3511C126.541 67.2857 129.343 61.0744 132.545 54.2341C133.299 52.6243 134.055 51.028 134.82 49.4805C135.323 48.4616 135.916 45.9638 136.416 47.0003C136.855 47.9091 136.018 50.2755 135.738 51.754C132.891 66.7868 136.03 49.7754 132.485 68.8396C132.349 69.5712 127.498 93.6204 129.014 93.848C130.598 94.0858 134.75 88.5084 135.498 87.5787C139.041 83.177 142.209 78.7159 145.694 73.8688C146.3 73.027 154.334 57.578 152.139 71.182C151.026 78.0822 149.494 84.0872 148.348 90.8856C147.679 94.8547 153.707 87.8474 154.075 87.4409C154.294 87.1981 158.271 80.9575 157.985 86.5453C157.745 91.2516 156.449 95.915 155.651 99.7039" stroke="%23DDD5E5" stroke-width="8" stroke-linecap="round"/></svg>');
+  z-index: -1;
+}
+#success-page .main-btn {
+  width: 100%;
+}
+#success-page .links-cont {
+  margin-bottom: 55px;
+  display: flex;
+  gap: 20px;
+}
+#success-page .links-cont .main-btn {
+  width: calc(50% - 10px);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+#success-page .links-cont .main-btn:first-child {
+  background-color: #2b66b2;
+}
+#success-page .links-cont .main-btn:first-child:hover {
+  background-color: rgba(43, 102, 178, 0.9);
+}
+#success-page .links-cont .main-btn:last-child {
+  background-color: #4454ff;
+}
+#success-page .links-cont .main-btn:last-child:hover {
+  background-color: rgba(68, 84, 255, 0.9);
+}
+#success-page .sp-desc {
+  margin-top: 10px;
+  font-size: 24px;
+  margin-bottom: 55px;
   text-align: center;
   color: #A39CAA;
 }
@@ -474,6 +513,185 @@ header .left-menu .menu-links::before {
   background: #DBD1E0;
 }
 
+.price-modal .modal-content {
+  width: auto;
+}
+.price-modal .modal-dialog {
+  display: flex;
+  justify-content: center;
+}
+.price-modal .click-cont {
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 0px rgba(24, 24, 24, 0.3);
+  border-radius: 10px;
+  color: #181818;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.price-modal .click-cont .title {
+  font-size: 35px;
+  padding: 16px 30px 12px 30px;
+}
+.price-modal .click-cont img {
+  margin: 30px;
+  margin-bottom: 0;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  max-width: 100%;
+}
+.price-modal .click-cont .desc {
+  padding: 30px;
+  padding-top: 0;
+  font-size: 14px;
+  text-align: center;
+}
+.price-modal .click-cont .main-btn {
+  margin: 30px;
+  margin-top: 0;
+  width: calc(100% - 60px);
+  text-align: center;
+  padding: 16px;
+}
+.price-modal .modal-content {
+  border: none;
+}
+
+#defaultModal .modal-dialog {
+  max-width: 850px;
+}
+#defaultModal button:has(svg) {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#defaultModal .modal-content {
+  background-color: #f6f2fa;
+  position: relative;
+  z-index: 1;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#defaultModal h2 {
+  text-align: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+#defaultModal h2::before {
+  position: absolute;
+  bottom: -20px;
+  right: -5px;
+  content: url('data:image/svg+xml,<svg width="300" height="94" viewBox="0 0 300 94" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.2346 28.4536C19.4771 33.474 15.6509 38.3993 11.7334 43.1885C9.80654 45.5441 8.29346 47.3685 6.28547 49.474C5.56994 50.2243 3.54931 50.654 4.09116 51.6379C6.34131 55.7235 31.0763 42.0037 31.5579 41.7459C48.8842 32.472 65.5744 20.511 80.2488 4.85727C84.8353 -0.0352347 73.0526 17.3481 69.2016 23.3016C59.7231 37.9554 49.9691 52.0264 39.2758 65.0332C38.8318 65.5732 37.6278 67.1117 38.2165 66.991C40.0014 66.6247 46.8405 62.8105 46.918 62.7663C64.4095 52.7953 81.4462 41.1101 98.0303 28.6082C102.817 24.9996 101.496 26.7903 98.5978 31.957C89.7898 47.6615 80.8187 63.1967 72.0013 78.8922C70.0647 82.3394 66.2269 85.2344 66.5155 89.5569C66.5614 90.2445 67.5479 89.9813 68.0288 89.763C70.5863 88.6021 73.0142 86.965 75.4819 85.4868C102.285 69.4318 128.573 50.682 156.255 37.5213C162.199 34.6953 163.11 35.8819 159.13 42.9824C156.251 48.1194 151.785 54.9782 148.613 59.572C145.941 63.4417 139.283 69.6825 137.414 74.7706C136.638 76.8848 140.834 73.7574 142.408 72.7613C149.212 68.4554 157.265 62.5594 163.708 58.0264C174.743 50.2636 180.372 46.2045 191.402 39.1184C194.992 36.8118 203.75 29.8592 208.616 29.278C209.511 29.1711 207.598 31.315 206.951 32.1631C204.007 36.0216 200.983 39.7657 198.023 43.6007C190.006 53.9852 181.908 64.3335 174.188 75.1312C173.456 76.1553 171.359 79.0068 172.372 78.6346C176.685 77.0506 180.369 73.1946 184.252 70.1852C199.055 58.7114 213.845 47.0272 228.365 34.8937C228.664 34.6439 230.047 33.0095 229.311 34.5846C228.276 36.7994 225.266 42.1105 224.619 43.24C223.06 45.9616 203.402 75.9013 204.076 76.9859C205.483 79.25 229.404 56.6013 230.256 55.8625C236.35 50.5789 241.663 45.9339 247.735 40.8186C249.164 39.6147 250.598 38.421 252.048 37.2636C253.003 36.5017 254.126 34.6338 255.075 35.4089C255.907 36.0886 254.319 37.8582 253.788 38.9638C248.391 50.2058 254.342 37.4842 247.622 51.7409C247.364 52.288 238.164 70.2726 241.039 70.4428C244.043 70.6207 251.916 66.4497 253.334 65.7545C260.052 62.4628 266.059 59.1267 272.667 55.5019C273.815 54.8723 289.049 43.3192 284.887 53.4926C282.776 58.6528 279.872 63.1435 277.699 68.2275C276.43 71.1957 287.861 65.9554 288.557 65.6514C288.973 65.4699 296.514 60.803 295.972 64.9817C295.516 68.5012 293.059 71.9886 291.546 74.8221" stroke="%23DDD5E5" stroke-width="8" stroke-linecap="round"/></svg>');
+  z-index: -1;
+}
+#defaultModal h2 span {
+  color: #181818;
+}
+#defaultModal .desc {
+  margin-bottom: 20px;
+  text-align: center;
+}
+#defaultModal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+#defaultModal form input {
+  padding: 1.1em;
+  border: 1px solid rgba(163, 156, 170, 0.4);
+  border-radius: 10px;
+  color: #181818;
+  background-color: #f6f2fa;
+}
+#defaultModal form input::placeholder {
+  color: #A39CAA;
+}
+#defaultModal .politics {
+  text-align: center;
+  width: 25em;
+}
+#defaultModal .politics a {
+  color: #9720FF;
+}
+
+#allPriceModal button:has(svg) {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#allPriceModal .modal-content {
+  background-color: #f6f2fa;
+  position: relative;
+  z-index: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 648px;
+}
+#allPriceModal .price-card {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(163, 156, 170, 0.4);
+  width: calc((100% - 80px) / 5);
+  height: 71px;
+  transition: all 0.3s ease-in-out;
+}
+#allPriceModal .price-card .title {
+  font-size: 24px;
+  color: #181818;
+  margin-bottom: 2px;
+}
+#allPriceModal .price-card .price {
+  font-size: 16px;
+  line-height: 1em;
+  transition: all 0.3s ease-in-out;
+}
+#allPriceModal .price-card .desc {
+  transition: all 0.3s ease-in-out;
+}
+#allPriceModal .price-card:hover {
+  box-shadow: 0px 0px 15px 0px rgba(24, 24, 24, 0.3);
+}
+#allPriceModal .price-card:hover .price {
+  color: #181818;
+}
+#allPriceModal .price-card:last-child {
+  height: auto;
+}
+#allPriceModal .price-card:last-child .desc {
+  transition: all 0.3s ease-in-out;
+}
+#allPriceModal .price-card:last-child .main-btn {
+  width: 100%;
+  min-width: fit-content;
+  background-color: #5745FF;
+  padding: 1em;
+  margin-top: 16px;
+}
+#allPriceModal .price-card:last-child .main-btn:hover {
+  background-color: rgba(87, 69, 255, 0.9);
+}
+#allPriceModal .price-card:last-child:hover {
+  box-shadow: 0px 0px 15px 0px rgba(24, 24, 24, 0.3);
+}
+#allPriceModal .price-card:last-child:hover .desc {
+  color: #181818;
+}
+
+@media (min-width: 1350px) {
+  .modal-xl {
+    --bs-modal-width: 1300px;
+  }
+}
 footer {
   position: relative;
   padding: 50px 20px 20px 20px;
@@ -679,6 +897,11 @@ footer .right-cont a:last-child {
   margin-top: 30px;
 }
 
+#sec_4 {
+  position: relative;
+  margin-left: -20px;
+  margin-right: -20px;
+}
 #sec_4 h2 {
   text-align: center;
   position: relative;
@@ -692,6 +915,7 @@ footer .right-cont a:last-child {
   z-index: -1;
 }
 #sec_4 .swiper-price {
+  padding: 20px;
   width: 100%;
 }
 #sec_4 .swiper-price .swiper-slide {
@@ -699,6 +923,7 @@ footer .right-cont a:last-child {
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   padding: 0;
+  position: relative;
 }
 #sec_4 .swiper-price .swiper-slide .img-cont {
   position: relative;
@@ -708,20 +933,20 @@ footer .right-cont a:last-child {
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
-#sec_4 .swiper-price .swiper-slide img {
+#sec_4 .swiper-price .swiper-slide .img-cont img {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
   border-radius: 10px;
 }
-#sec_4 .swiper-price .swiper-slide .title {
+#sec_4 .swiper-price .swiper-slide .img-cont .title {
   font-size: 48px;
   color: #fff;
   position: absolute;
   bottom: 18px;
   left: 18px;
 }
-#sec_4 .swiper-price .swiper-slide .edge {
+#sec_4 .swiper-price .swiper-slide .img-cont .edge {
   position: absolute;
   top: 0;
   right: 0;
@@ -738,7 +963,7 @@ footer .right-cont a:last-child {
   border-top: 0;
   border-right: 0;
 }
-#sec_4 .swiper-price .swiper-slide .edge:before {
+#sec_4 .swiper-price .swiper-slide .img-cont .edge:before {
   content: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_43_1346)"><path d="M8.05068 15.9635L5.43835 10.6883L0.212891 8.05111L5.43835 5.4139L8.05068 0.138678L10.663 5.4139L15.8885 8.05111L10.663 10.6883L8.05068 15.9635ZM16.5035 15.7717L15.6985 18.2098L16.906 15.7717L19.3211 14.5527L16.906 13.3337V14.1337L16.5035 15.7717ZM16.9732 3.44596L16.5035 4.39397L17.443 2.49794L19.3211 1.54952L17.443 0.601104L16.5035 -1.29492L16.8494 1.25746L18.382 2.02373L16.9732 3.44596Z" fill="%23F6F2FA"/></g><defs><clipPath id="clip0_43_1346"><rect width="16" height="16" fill="white"/></clipPath></defs></svg>');
 }
 #sec_4 .swiper-price .swiper-slide .price {
@@ -760,6 +985,12 @@ footer .right-cont a:last-child {
 #sec_4 .swiper-price .swiper-slide:nth-child(6) > div div {
   transition: all 0.3s ease-in-out;
   font-size: 24px;
+}
+#sec_4 .swiper-price .swiper-slide:hover .img-cont {
+  box-shadow: 0px 0px 15px 0px rgba(24, 24, 24, 0.3);
+}
+#sec_4 .swiper-price .swiper-slide:hover:nth-child(6) {
+  box-shadow: 0px 0px 15px 0px rgba(24, 24, 24, 0.3);
 }
 #sec_4 .swiper-price .swiper-slide:hover:nth-child(6) div {
   color: #181818;
