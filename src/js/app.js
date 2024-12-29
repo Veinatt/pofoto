@@ -26,7 +26,7 @@ function ready(fn) {
 
 ready(function () {
   let y = document.documentElement.scrollTop;
-  if (y > 100) {
+  if (y > 50) {
     document.querySelector('header').classList.add('active');
   } else {
     document.querySelector('header').classList.remove('active');
@@ -41,7 +41,7 @@ ready(function () {
 
 window.addEventListener('scroll', function () {
   let y = document.documentElement.scrollTop;
-  if (y > 100) {
+  if (y > 50) {
     document.querySelector('header').classList.add('active');
   } else {
     document.querySelector('header').classList.remove('active');
@@ -116,66 +116,78 @@ window.addEventListener('scroll', checkScroll);
 
 const swiper_review = new Swiper('.swiper-review', {
   spaceBetween: 20,
-  loop: true,
   breakpoints: {
-    1000: {
+    1400: {
       slidesPerView: 3,
       spaceBetween: 20,
     },
-    800: {
-      slidesPerView: 2,
+    1100: {
+      slidesPerView: 2.2,
+      spaceBetween: 20,
+    },
+    600: {
+      slidesPerView: 1.5,
       spaceBetween: 20,
     },
     300: {
-      slidesPerView: 1,
-      spaceBetween: 20,
+      slidesPerView: 1.05,
+      spaceBetween: 16,
     },
   }
 });
 const swiper_addon = new Swiper('.swiper-addon', {
   spaceBetween: 20,
-  loop: true,
   breakpoints: {
-    1000: {
+    1400: {
       slidesPerView: 6,
       spaceBetween: 20,
     },
-    800: {
-      slidesPerView: 2,
+    1100: {
+      slidesPerView: 4.2,
       spaceBetween: 20,
     },
-    300: {
-      slidesPerView: 1,
+    800: {
+      slidesPerView: 3.2,
       spaceBetween: 20,
+    },
+    370: {
+      slidesPerView: 2.1,
+      spaceBetween: 16,
+    },
+    300: {
+      slidesPerView: 1.05,
+      spaceBetween: 16,
     },
   }
 });
 const swiper_price = new Swiper('.swiper-price', {
   spaceBetween: 20,
-  loop: true,
-  enabled: false,
-  allowSlideNext: false,
-  allowSlidePrev: false,
-  focusableElements: false,
-  slideToClickedSlide: false,
-  preventClicks: true,
-  preventClicksPropagation: true,
-  noSwiping: true,
-  noSwipingSelector: 'button',
   breakpoints: {
-    1000: {
+    1400: {
       slidesPerView: 6,
       spaceBetween: 20,
     },
-    800: {
-      slidesPerView: 2,
+    1100: {
+      slidesPerView: 4.2,
       spaceBetween: 20,
+    },
+    800: {
+      slidesPerView: 3.2,
+      spaceBetween: 20,
+    },
+    370: {
+      slidesPerView: 2.1,
+      spaceBetween: 16,
     },
     300: {
-      slidesPerView: 1,
-      spaceBetween: 20,
+      slidesPerView: 1.05,
+      spaceBetween: 16,
     },
   }
+});
+const swiper_sec_6 = new Swiper('.swiper-sec-6', {
+  slidesPerView: 1.05,
+  spaceBetween: 16,
 });
 // $('#priceModal').on('show.bs.modal', function (event) {
 //   var button = $(event.relatedTarget) // Button that triggered the modal
@@ -237,6 +249,8 @@ if (defaultModal) {
     defaultModal.querySelector('.main-btn').setAttribute('data-endprice', price)
   })
 }
+
+
 // $('#defaultModal').on('show.bs.modal', function (event) {
 //   var button = $(event.relatedTarget) // Button that triggered the modal
 //   var price = button.data('price') // Extract info from data-* attributes

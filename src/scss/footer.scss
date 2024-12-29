@@ -5,26 +5,47 @@ footer {
     justify-content: space-between;
     gap: 50px;
     align-items: flex-start;
-
+    @media (max-width:800px) {
+        flex-wrap: wrap;
+    }
+    @media (max-width:600px) {
+        gap: 24px;
+        padding: 30px 16px 16px 16px;
+    }
     .left-cont {
+        
         .logo-desc {
             margin-top: 10px;
             font-family: $f-m;
-            font-size: 16px;
             color: rgba($color: $clr-black, $alpha: .6);
+        }
+        @media (max-width:800px) {
+            width: 100%;
+        }
+        @media (max-width:600px) {
+            .logo-text {
+                svg {
+                    width: 120px;
+                    object-fit: contain;
+                }
+            }
         }
     }
     .middle-cont {
         display: flex;
         gap: 40px;
         align-items: flex-start;
-
+        @media (max-width:600px) {
+            width: 100%;
+        }
         &-col {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 8px;
-
+            @media (max-width:600px) {
+                width: calc(50% - 20px);
+            }
             &-title {
                 @extend %text_h1;
                 font-size: 24px;
@@ -42,7 +63,14 @@ footer {
         flex-direction: column;
         align-items: flex-end;
         gap: 12px;
+        @media (max-width:600px) {
+            align-items: flex-start;
+        }
         * {
+            text-align: end;
+            @media (max-width:600px) {
+                text-align: start;
+            }
             color: rgba($color: $clr-black, $alpha: .6);
         }
         a:hover {

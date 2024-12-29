@@ -8,14 +8,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 16px;
     font-family: $f-m;
     padding: 25px 20px;
-
+    gap: 20px;
     &.hide {
         top: -115px;
+        @media (max-width:800px) {
+            top: -155px;
+        }
     }
-
+    @media (max-width:600px) {
+        padding: 20px 16px;
+    }
     &.active {
         border-bottom: 1px solid $clr-border
     }
@@ -29,14 +33,44 @@ header {
         align-items: center;
         gap: 32px;
         color: $clr-grey;
-
-
+        @media (max-width:991px) {
+            gap: 20px;
+		}
+        @media (max-width:600px) {
+            gap: 16px;
+        }
+        @media (max-width:800px) {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            
+        }
+        .logo-text {
+            @media (max-width:800px) {
+                padding: 8px 0;
+                
+            }
+            @media (max-width:600px) {
+                padding: 3px 0;
+                svg {
+                    width: 120px;
+                    object-fit: contain;
+                }
+            }
+        }
         .menu-links {
             position: relative;
             display: flex;
             align-items: center;
             gap: 32px;
-
+            @media (max-width:991px) {
+                gap: 20px;
+            }
+            @media (max-width:800px) {
+                width: 100%;
+                justify-content: space-between;
+                gap: 16px;
+            }
             a {
                 &:hover {
                     color: $clr-black;
@@ -48,8 +82,24 @@ header {
                 width: 1px;
                 height: 28px;
                 background: #DBD1E0;
+                @media (max-width:850px) {
+                    display: none;
+                }
             }
         }
+        
+    }
+    @media (max-width:800px) {
+        .right-menu {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            @media (max-width:600px) {
+                top: 20px;
+                right: 16px;
+            }
+        }
+        
     }
 }
 
@@ -145,6 +195,10 @@ header {
             right: -5px;
             content: url('data:image/svg+xml,<svg width="300" height="94" viewBox="0 0 300 94" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.2346 28.4536C19.4771 33.474 15.6509 38.3993 11.7334 43.1885C9.80654 45.5441 8.29346 47.3685 6.28547 49.474C5.56994 50.2243 3.54931 50.654 4.09116 51.6379C6.34131 55.7235 31.0763 42.0037 31.5579 41.7459C48.8842 32.472 65.5744 20.511 80.2488 4.85727C84.8353 -0.0352347 73.0526 17.3481 69.2016 23.3016C59.7231 37.9554 49.9691 52.0264 39.2758 65.0332C38.8318 65.5732 37.6278 67.1117 38.2165 66.991C40.0014 66.6247 46.8405 62.8105 46.918 62.7663C64.4095 52.7953 81.4462 41.1101 98.0303 28.6082C102.817 24.9996 101.496 26.7903 98.5978 31.957C89.7898 47.6615 80.8187 63.1967 72.0013 78.8922C70.0647 82.3394 66.2269 85.2344 66.5155 89.5569C66.5614 90.2445 67.5479 89.9813 68.0288 89.763C70.5863 88.6021 73.0142 86.965 75.4819 85.4868C102.285 69.4318 128.573 50.682 156.255 37.5213C162.199 34.6953 163.11 35.8819 159.13 42.9824C156.251 48.1194 151.785 54.9782 148.613 59.572C145.941 63.4417 139.283 69.6825 137.414 74.7706C136.638 76.8848 140.834 73.7574 142.408 72.7613C149.212 68.4554 157.265 62.5594 163.708 58.0264C174.743 50.2636 180.372 46.2045 191.402 39.1184C194.992 36.8118 203.75 29.8592 208.616 29.278C209.511 29.1711 207.598 31.315 206.951 32.1631C204.007 36.0216 200.983 39.7657 198.023 43.6007C190.006 53.9852 181.908 64.3335 174.188 75.1312C173.456 76.1553 171.359 79.0068 172.372 78.6346C176.685 77.0506 180.369 73.1946 184.252 70.1852C199.055 58.7114 213.845 47.0272 228.365 34.8937C228.664 34.6439 230.047 33.0095 229.311 34.5846C228.276 36.7994 225.266 42.1105 224.619 43.24C223.06 45.9616 203.402 75.9013 204.076 76.9859C205.483 79.25 229.404 56.6013 230.256 55.8625C236.35 50.5789 241.663 45.9339 247.735 40.8186C249.164 39.6147 250.598 38.421 252.048 37.2636C253.003 36.5017 254.126 34.6338 255.075 35.4089C255.907 36.0886 254.319 37.8582 253.788 38.9638C248.391 50.2058 254.342 37.4842 247.622 51.7409C247.364 52.288 238.164 70.2726 241.039 70.4428C244.043 70.6207 251.916 66.4497 253.334 65.7545C260.052 62.4628 266.059 59.1267 272.667 55.5019C273.815 54.8723 289.049 43.3192 284.887 53.4926C282.776 58.6528 279.872 63.1435 277.699 68.2275C276.43 71.1957 287.861 65.9554 288.557 65.6514C288.973 65.4699 296.514 60.803 295.972 64.9817C295.516 68.5012 293.059 71.9886 291.546 74.8221" stroke="%23DDD5E5" stroke-width="8" stroke-linecap="round"/></svg>');
             z-index: -1;
+            @media (max-width:1400px) {
+                bottom: -30px;
+                right: -45px;
+			}
         }
 
         span {
@@ -192,8 +246,18 @@ header {
         position: absolute;
         top: 20px;
         right: 20px;
+        padding: 0;
+        @media (max-width:1025px) {
+            top: 10px;
+            right: 10px;
+        }
     }
-
+    @media (max-width:1025px) {
+        .modal-dialog {
+            max-width: 850px;
+        }
+    }
+    
     .modal-content {
         background-color: $clr-bg;
         position: relative;
@@ -205,6 +269,10 @@ header {
         flex-wrap: wrap;
         gap: 20px;
         height: 648px;
+        @media (max-width:1025px) {
+            height: 830px;
+            padding: 40px;
+        }
     }
 
     .price-card {
@@ -214,16 +282,20 @@ header {
         width: calc((100% - 80px) / 5);
         height: 71px;
         transition: all .3s ease-in-out;
-
+        @media (max-width:1025px) {
+            width: calc((100% - 60px) / 4);
+        }
         .title {
             @extend %text_h1;
             font-size: 24px;
             color: $clr-black;
             margin-bottom: 2px;
+            @media (max-width:1025px) {
+                font-size: 20px;
+            }
         }
 
         .price {
-            font-size: 16px;
             line-height: 1em;
             transition: all .3s ease-in-out;
         }
