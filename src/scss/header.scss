@@ -106,6 +106,9 @@ header {
 .price-modal {
     .modal-content {
         width: auto;
+        @media (max-width:600px) {
+            width: 100%;
+        }
     }
 
     .modal-dialog {
@@ -130,6 +133,10 @@ header {
             @extend %text_h1;
             font-size: 35px;
             padding: 16px 30px 12px 30px;
+            @media (max-width:600px) {
+                padding: 16px;
+                font-size: 24px;
+            }
         }
 
         img {
@@ -139,7 +146,11 @@ header {
             aspect-ratio: 1;
             border-radius: 10px;
             max-width: 100%;
-
+            @media (max-width:600px) {
+                margin: 16px;
+                margin-bottom: 0;
+                width: calc(100% - 32px);
+            }
         }
 
         .desc {
@@ -147,6 +158,10 @@ header {
             padding-top: 0;
             font-size: 14px;
             text-align: center;
+            @media (max-width:600px) {
+                padding: 16px;
+                padding-top: 0;
+            }
         }
 
         .main-btn {
@@ -155,6 +170,11 @@ header {
             width: calc(100% - 60px);
             text-align: center;
             padding: 16px;
+            @media (max-width:600px) {
+                width: calc(100% - 32px);
+                margin: 16px;
+                margin-top: 0;
+            }
         }
     }
 
@@ -172,6 +192,11 @@ header {
         position: absolute;
         top: 20px;
         right: 20px;
+        padding: 0;
+        @media (max-width:600px) {
+            top: 16px;
+            right: 16px;
+        }
     }
 
     .modal-content {
@@ -182,6 +207,9 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media (max-width:600px) {
+            padding: 40px 16px;
+        }
     }
 
     h2 {
@@ -248,8 +276,8 @@ header {
         right: 20px;
         padding: 0;
         @media (max-width:1025px) {
-            top: 10px;
-            right: 10px;
+            top: 16px;
+            right: 16px;
         }
     }
     @media (max-width:1025px) {
@@ -271,7 +299,15 @@ header {
         height: 648px;
         @media (max-width:1025px) {
             height: 830px;
-            padding: 40px;
+            padding: 50px 40px;
+        }
+        @media (max-width:600px) {
+            padding: 50px 16px;
+            gap: 10px;
+            height: 695px;
+        }
+        @media (max-width:410px) {
+            height: 1000px;
         }
     }
 
@@ -285,6 +321,14 @@ header {
         @media (max-width:1025px) {
             width: calc((100% - 60px) / 4);
         }
+        @media (max-width:600px) {
+            width: calc((100% - 20px) / 3);
+            padding: 8px 10px;
+            height: 50px;
+        }
+        @media (max-width:410px) {
+            width: calc((100% - 10px) / 2);
+        }
         .title {
             @extend %text_h1;
             font-size: 24px;
@@ -293,14 +337,23 @@ header {
             @media (max-width:1025px) {
                 font-size: 20px;
             }
+            @media (max-width:600px) {
+                font-size: 16px;
+            }
         }
 
         .price {
             line-height: 1em;
             transition: all .3s ease-in-out;
+            @media (max-width:600px) {
+                font-size: 12px;
+            }
         }
         .desc {
             transition: all .3s ease-in-out;
+            @media (max-width:600px) {
+                font-size: 12px;
+            }
         }
 
         &:hover {

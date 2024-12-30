@@ -206,49 +206,6 @@ const swiper_sec_6 = new Swiper('.swiper-sec-6', {
 //   console.log(title + 'after');
 // })
 
-var priceModal = document.getElementById('priceModal')
-
-if (priceModal) {
-  priceModal.addEventListener('show.bs.modal', event => {
-    var button = event.relatedTarget    
-    var title = button.getAttribute('data-title')
-    var desc = button.getAttribute('data-desc')
-    var img = button.getAttribute('data-img')
-    
-    priceModal.querySelector('img').setAttribute('src', img)
-    priceModal.querySelector('.main-btn').setAttribute('data-price', title)
-    priceModal.querySelector('.title span').textContent = title
-    priceModal.querySelector('.desc').textContent = desc
-  })
-}
-var addonModal = document.getElementById('addonModal')
-
-if (addonModal) {
-  addonModal.addEventListener('show.bs.modal', event => {
-    var button = event.relatedTarget    
-    var title = button.getAttribute('data-title')
-    var desc = button.getAttribute('data-desc')
-    var img = button.getAttribute('data-img')
-    
-    addonModal.querySelector('img').setAttribute('src', img)
-    addonModal.querySelector('.title').textContent = title
-    addonModal.querySelector('.desc').textContent = desc
-  })
-}
-var defaultModal = document.getElementById('defaultModal')
-
-if (defaultModal) {
-  defaultModal.addEventListener('show.bs.modal', event => {
-    var button = event.relatedTarget    
-    console.log(button);
-    
-    var price = button.getAttribute('data-price')
-    console.log(price);
-    
-    defaultModal.querySelector('h2 span').textContent = price
-    defaultModal.querySelector('.main-btn').setAttribute('data-endprice', price)
-  })
-}
 
 
 // $('#defaultModal').on('show.bs.modal', function (event) {
