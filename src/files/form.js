@@ -19,8 +19,8 @@ document.querySelectorAll('input[type="tel"]').forEach(tel => {
 });
 
 
-var form_name_modal = document.getElementById('FormInputName')
-var form_tel_modal = document.getElementById('FormInputTel')
+var form_name_modal = document.getElementById('FormInputName2')
+var form_tel_modal = document.getElementById('FormInputTel2')
 
 
 
@@ -37,13 +37,15 @@ var priceModal = document.getElementById('priceModal')
 if (priceModal) {
     priceModal.addEventListener('show.bs.modal', event => {
         var button = event.relatedTarget
-        var title = button.getAttribute('data-title')
+        var size = button.getAttribute('data-title')
         var desc = button.getAttribute('data-desc')
         var img = button.getAttribute('data-img')
+        var price = button.querySelector('.price').textContent
 
         priceModal.querySelector('img').setAttribute('src', img)
-        priceModal.querySelector('.main-btn').setAttribute('data-price', title)
-        priceModal.querySelector('.title span').textContent = title
+        priceModal.querySelector('.main-btn').setAttribute('data-price', price)
+        priceModal.querySelector('.main-btn').setAttribute('data-size', size)
+        priceModal.querySelector('.title span').textContent = size
         priceModal.querySelector('.desc').textContent = desc
     })
 }
@@ -67,9 +69,11 @@ if (defaultModal) {
     defaultModal.addEventListener('show.bs.modal', event => {
         var button = event.relatedTarget
 
+        var size = button.getAttribute('data-size')
         var price = button.getAttribute('data-price')
 
-        defaultModal.querySelector('h2 span').textContent = price
+        defaultModal.querySelector('h2 span').textContent = size
+        defaultModal.querySelector('.main-btn').setAttribute('data-endsize', size)
         defaultModal.querySelector('.main-btn').setAttribute('data-endprice', price)
     })
 }
@@ -84,49 +88,52 @@ if (defaultModal) {
 
 function form_submit(e, formid) {
     e.preventDefault();
-    var form_name, form_tel, form_price;
+    var form_name, form_tel, form_price, form_size;
     if (formid == 'form1') {
         form_name = document.getElementById('FormInputName1').value;
         form_tel = document.getElementById('FormInputTel1').value
-        form_price = '';
-        if (check(form_name, true) && check(form_tel.replace(/[^0-9]/g, ""), false)) {
-            form = new FormData();
-            xhr = new XMLHttpRequest();
-            form.append('form_name', form_name);
-            form.append('form_price', form_price);
-            form.append('form_tel', form_tel);
+        console.log(form_name, form_tel);
+        // if (check(form_name, true) && check(form_tel.replace(/[^0-9]/g, ""), false)) {
+        //     form = new FormData();
+        //     xhr = new XMLHttpRequest();
+        //     form.append('form_name', form_name);
+        //     form.append('form_tel', form_tel);
 
-            xhr.open('POST', 'form-handler.php');
-            xhr.send(form);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState != 4) return;
+        //     xhr.open('POST', 'form-handler.php');
+        //     xhr.send(form);
+        //     xhr.onreadystatechange = function () {
+        //         if (xhr.readyState != 4) return;
 
-                if (xhr.status === 200) {
-                    window.location.href = 'https://deykun-marketing.ru/thanks.html';
-                }
-            }
-        }
+        //         if (xhr.status === 200) {
+        //             window.location.href = 'https://deykun-marketing.ru/thanks.html';
+        //         }
+        //     }
+        // }
     } else if (formid == 'form2') {
         form_name = document.getElementById('FormInputName2').value;
         form_tel = document.getElementById('FormInputTel2').value;
-        form_price = document.getElementById('form2').querySelector('.main-btn').getAttribute('data-price')
-        if (check(form_name, true) && check(form_tel.replace(/[^0-9]/g, ""), false)) {
-            form = new FormData();
-            xhr = new XMLHttpRequest();
-            form.append('form_name', form_name);
-            form.append('form_price', form_price);
-            form.append('form_tel', form_tel);
+        form_price = document.getElementById('form2').querySelector('.main-btn').getAttribute('data-endprice')
+        form_size = document.getElementById('form2').querySelector('.main-btn').getAttribute('data-endsize')
+        console.log(form_name, form_tel, form_price, form_size);
+        
+        // if (check(form_name, true) && check(form_tel.replace(/[^0-9]/g, ""), false)) {
+        //     form = new FormData();
+        //     xhr = new XMLHttpRequest();
+        //     form.append('form_name', form_name);
+        //     form.append('form_endprice', form_price);
+        //     form.append('form_endsize', form_size);
+        //     form.append('form_tel', form_tel);
 
-            xhr.open('POST', 'form-handler.php');
-            xhr.send(form);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState != 4) return;
+        //     xhr.open('POST', 'form-handler.php');
+        //     xhr.send(form);
+        //     xhr.onreadystatechange = function () {
+        //         if (xhr.readyState != 4) return;
 
-                if (xhr.status === 200) {
-                    window.location.href = 'https://deykun-marketing.ru/thanks.html';
-                }
-            }
-        }
+        //         if (xhr.status === 200) {
+        //             window.location.href = 'https://deykun-marketing.ru/thanks.html';
+        //         }
+        //     }
+        // }
     }
 
 
